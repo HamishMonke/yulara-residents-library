@@ -1,0 +1,5 @@
+ISBN: 978-0-7336-4469-6
+NAME: The shelly bay, Ladies swimming circle
+GENRE: FICTION
+AUTHOR: Sophie Green
+IS_IN_USE: false

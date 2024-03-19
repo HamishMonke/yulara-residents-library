@@ -1,0 +1,111 @@
+<!doctype html>
+    <html>
+    <head>
+        <title>Yulara Library</title>
+        <h1>Yulara residents library</h1>
+
+        <p id="output">DNFR</p>
+    </head>
+
+    <body>
+        <center>
+            <div class="BooksHolder" id="BooksHolder">
+                <div class="Book" id="BookPrefab">
+                    <img class="BookDetails" id="output" style="border-radius: 3%;" src="" width="300" height="445" />
+                    <iframe class="BookDetails" id="output" src="BDat/Prefab.txt"></iframe>
+                </div>
+            </div>
+        </center>
+
+        <div class="rights">
+            <p class="TextSmall">
+                Contact us at yularalibrary@gmail.com
+            </p>
+
+            <p class="TextSmall">
+                Site opened 7th Jan 2024
+            </p>
+
+            <a class="TextSmall" href="https://arrcommunity.com.au" target="_blank">
+                ARR community website
+            </a>
+
+            <br>
+            </br>
+
+            <p style="font-family: Arial ; color:white ; font-size: 15px ;">
+                Site version 0.1f
+            </p>
+        </div>
+    </body>
+    </html>
+
+<script type="text/javascript">
+    for (let i = 0; i < 2; i++)
+    {
+        var _id = "output" + i;
+        var imagePath = "BDat/" + i + ".png";
+        var textPath = "BDat/" + i + ".txt";
+
+        const node = document.getElementById("BookPrefab");
+        var clone = node.cloneNode(true);
+        document.getElementById("BooksHolder").appendChild(clone);
+        clone.appendChild(clone.childNodes[0]);
+        clone.appendChild(clone.childNodes[2]);
+
+        clone.id = "book";
+
+        var bookImage = clone.firstChild;
+        bookImage.id = _id;
+        bookImage.src = imagePath;
+
+        var bookText = clone.lastChild;
+        bookText.id = _id;
+        bookText.src = textPath;
+
+        DebugID(_id);
+
+        if(i == 1)
+        {
+            document.getElementById("BookPrefab").remove();
+        }
+    }
+
+    function DebugID(_id)
+    {
+        document.getElementById("output").innerHTML = "rendered result: " + _id;
+    }
+</script>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        background-image: linear-gradient(#FCA560, #563B1E);
+    }
+
+    .TextSmall {
+        font-family: Arial;
+        color: white;
+        font-size: 20px;
+    }
+
+    .BooksHolder div {
+        display: inline-block;
+    }
+
+    .BooksHolder div:hover {
+        padding: 0px 10px;
+        -ms-transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+
+    .Book iframe {
+        display: table-footer-group;
+    }
+
+    .rights {
+        background-color: black;
+    }
+</style>

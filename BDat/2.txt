@@ -1,0 +1,5 @@
+ISBN: .
+NAME: .
+GENRE: .
+AUTHOR: .
+IS_IN_USE: false
